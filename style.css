@@ -17,6 +17,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -109,7 +110,101 @@ body {
     text-decoration: none;
 }
 
+/* responsiveness for tablets (less than 1024px but greater than 768px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .banner {
+        margin: 8px;
+        padding: 16px;
+    }
 
+    .banner-title {
+        font-size: 40px;
+        margin: 8px;
+        padding: 8px;
+        line-height: 48px;
+    }
+
+    .banner-para {
+        font-size: 14px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .banner-btn {
+        font-size: 16px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .blogs-area {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        background-color: var(--text-color-white);
+        margin: auto;
+    }
+
+    .options a {
+        border: 1px solid #E8E8E8;
+    }
+}
+
+/* responsiveness for mobiles (less than 768px) */
+@media screen and (max-width: 768px) {
+    .banner {
+        margin: 8px;
+        padding: 16px;
+    }
+
+    .banner-title {
+        font-size: 40px;
+        margin: 8px;
+        padding: 8px;
+        line-height: 48px;
+    }
+
+    .banner-para {
+        font-size: 14px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .banner-btn {
+        font-size: 16px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .blogs-area {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        background-color: var(--text-color-white);
+        margin: auto;
+    }
+
+    .options a {
+        border: 1px solid #E8E8E8;
+    }
+}
 
 .single-blog {
     border: 1px solid #E8E8E8;
@@ -182,6 +277,7 @@ footer .important-links {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    flex-wrap: wrap;
 }
 
 footer .important-links a {
@@ -191,12 +287,13 @@ footer .important-links a {
     text-decoration: none;
     margin: 16px 8px;
     padding: 12px;
+    width: 180px;
 }
 
 .social-medias {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .fa-brands {
