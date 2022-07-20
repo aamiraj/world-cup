@@ -1,4 +1,4 @@
-/* css style of html elements */
+/* css style of world-cup html elements */
 
 /* use font family Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -34,24 +34,27 @@ body {
 }
 
 .banner {
+    width: 50%;
     margin: 56px;
     padding: 32px;
 }
 
 .banner-title {
+    width: 100%;
     color: var(--text-color-white);
     font-size: 70px;
     font-weight: 700;
-    margin: 16px;
+    margin: 16px 0;
     padding: 16px;
     line-height: 80px;
 }
 
 .banner-para {
+    width: 100%;
     color: var(--text-color-white);
     font-size: 16px;
     font-weight: 400;
-    margin: 16px;
+    margin: 16px 0;
     padding: 16px;
 }
 
@@ -64,6 +67,10 @@ body {
     text-decoration: none;
     background-color: var(--button-color);
     border-radius: 12px;
+}
+
+.banner-img {
+    width: 50%;
 }
 
 .banner-img img {
@@ -108,102 +115,6 @@ body {
     font-size: 20px;
     font-weight: 500;
     text-decoration: none;
-}
-
-/* responsiveness for tablets (less than 1024px but greater than 768px) */
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-    .banner {
-        margin: 8px;
-        padding: 16px;
-    }
-
-    .banner-title {
-        font-size: 40px;
-        margin: 8px;
-        padding: 8px;
-        line-height: 48px;
-    }
-
-    .banner-para {
-        font-size: 14px;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .banner-btn {
-        font-size: 16px;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .blogs-area {
-        display: grid;
-        grid-template-columns: auto;
-    }
-
-    .blogs-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .options {
-        display: flex;
-        justify-content: center;
-        background-color: var(--text-color-white);
-        margin: auto;
-    }
-
-    .options a {
-        border: 1px solid #E8E8E8;
-    }
-}
-
-/* responsiveness for mobiles (less than 768px) */
-@media screen and (max-width: 768px) {
-    .banner {
-        margin: 8px;
-        padding: 16px;
-    }
-
-    .banner-title {
-        font-size: 40px;
-        margin: 8px;
-        padding: 8px;
-        line-height: 48px;
-    }
-
-    .banner-para {
-        font-size: 14px;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .banner-btn {
-        font-size: 16px;
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .blogs-area {
-        display: grid;
-        grid-template-columns: auto;
-    }
-
-    .blogs-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .options {
-        display: flex;
-        justify-content: center;
-        background-color: var(--text-color-white);
-        margin: auto;
-    }
-
-    .options a {
-        border: 1px solid #E8E8E8;
-    }
 }
 
 .single-blog {
@@ -302,4 +213,215 @@ footer .important-links a {
     font-weight: 400;
     margin: 16px 8px;
     padding: 12px;
+}
+
+/* view-all button invisible indesktop screen*/
+@media screen and (min-width: 992px) {
+    .view-all {
+        display: none;
+    }
+}
+
+/* responsiveness for tablets (less than 991px but greater than 768px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .banner {
+        margin: 8px;
+        padding: 16px;
+    }
+
+    .banner-title {
+        font-size: 40px;
+        margin: 8px;
+        padding: 8px;
+        line-height: 48px;
+    }
+
+    .banner-para {
+        font-size: 14px;
+        margin: 8px;
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .banner-btn {
+        font-size: 16px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .blogs-area {
+        grid-template-columns: auto;
+    }
+
+    .blogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--text-color-white);
+        margin: auto;
+    }
+
+    .options a {
+        width: 33%;
+        border: 1px solid #E8E8E8;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* view-all button visible */
+    .view-all {
+        display: block;
+        margin: 24px auto;
+        padding: 8px 16px;
+    }
+
+    .invisible {
+        display: none;
+    }
+}
+
+/* responsiveness for landscape mobiles (less than 768px greater than 576px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .banner {
+        margin: 8px;
+        padding: 16px;
+    }
+
+    .banner-title {
+        font-size: 32px;
+        margin: 8px;
+        padding: 8px;
+        line-height: 40px;
+    }
+
+    .banner-para {
+        font-size: 14px;
+        margin: 8px;
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .banner-btn {
+        font-size: 16px;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .blogs-area {
+        grid-template-columns: auto;
+    }
+
+    .blogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--text-color-white);
+        margin: auto;
+    }
+
+    .options a {
+        width: 33%;
+        border: 1px solid #E8E8E8;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* view-all button visible */
+    .view-all {
+        display: block;
+        margin: 24px auto;
+        padding: 8px 16px;
+    }
+
+    .invisible {
+        display: none;
+    }
+}
+
+/* responsive for portrait mobile screen */
+@media screen and (max-width: 575px) {
+    .banner-area {
+        width: 100%;
+        margin: 8px auto;
+        padding: 8px 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner {
+        width: 100%;
+        margin: 8px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .banner-title {
+        font-size: 24px;
+        margin: 4px 0;
+        padding: 4px;
+        line-height: 24px;
+    }
+
+    .banner-para {
+        font-size: 14px;
+        margin: 4px;
+        padding: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .banner-btn {
+        font-size: 16px;
+        margin: 4px;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    .banner-img {
+        width: 100%;
+    }
+
+    .banner-img img {
+        width: 100%;
+    }
+
+    .blogs-area {
+        grid-template-columns: auto;
+        width: 100%;
+    }
+
+    .blogs-grid {
+        grid-template-columns: auto;
+        gap: 16px 0;
+    }
+
+    .options {
+        width: 100%;
+        background-color: var(--text-color-white);
+        border-radius: 8px;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    /* view-all button visible */
+    .view-all {
+        display: block;
+        margin: 24px auto;
+        padding: 8px 16px;
+    }
 }
