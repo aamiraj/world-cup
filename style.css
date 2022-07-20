@@ -6,7 +6,7 @@
 /* Defining some useful colors from figma design */
 :root {
     --body-background-color: #f1f1f1;
-    --header-background-color: #1E1E1E;
+    --header-background-color: #56042C;
     --button-color: #DD0000;
     --text-color-white: #FFFFFF;
     --text-color-black: #161616;
@@ -24,13 +24,29 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* banner area */
+@keyframes banner-color-change {
+    from {
+        background-color: var(--header-background-color);
+    }
+
+    to {
+        background-color: #161616;
+    }
+}
+
 .banner-area {
     background-color: var(--header-background-color);
     border-radius: 16px;
     width: 90%;
     margin: 32px auto;
-    padding: 48px 24px;
+    padding: 0 24px;
     display: flex;
+    align-items: flex-end;
+    animation: banner-color-change;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .banner {
@@ -67,6 +83,12 @@ body {
     text-decoration: none;
     background-color: var(--button-color);
     border-radius: 12px;
+    /* transition: color 2s, background-color 2s; */
+}
+
+.banner-btn:hover {
+    color: #161616;
+    background-color: #E8E8E8;
 }
 
 .banner-img {
@@ -75,6 +97,11 @@ body {
 
 .banner-img img {
     width: 100%;
+    transition: transform 2s ease-in-out;
+}
+
+.banner-img img:hover {
+    transform: translate(-16px, -16px);
 }
 
 /* blogs-area */
@@ -88,7 +115,8 @@ body {
     justify-items: start;
 }
 
-.blogs-grid {
+.blogs-grid,
+.match-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px 24px;
@@ -117,12 +145,22 @@ body {
     text-decoration: none;
 }
 
+.options a:hover {
+    color: var(--body-background-color);
+    background-color: var(--text-color-black);
+}
+
 .single-blog {
     border: 1px solid #E8E8E8;
     border-radius: 8px;
 }
 
-.single-blog img {
+.single-blog .match .flags {
+    padding: 8px;
+    width: 33%;
+}
+
+.single-blog .blog-img {
     width: 100%;
 }
 
@@ -137,7 +175,27 @@ body {
     text-align: center;
     text-decoration: none;
     color: var(--text-color-black);
+    background-color: var(--body-background-color);
     border-radius: 8px;
+}
+
+.single-blog a:hover {
+    color: var(--body-background-color);
+    background-color: var(--text-color-black);
+}
+
+.single-blog .match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-blog .match span {
+    color: var(--text-color-black);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 8px;
+    padding: 4px 8px;
 }
 
 .single-blog h2 {
@@ -145,6 +203,16 @@ body {
     font-weight: 600;
     margin: 4px 8px;
     padding: 4px 8px;
+    text-align: center;
+}
+
+.single-blog h3 {
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 4px 8px;
+    padding: 4px 8px;
+    text-align: center;
 }
 
 .icons {
@@ -201,6 +269,10 @@ footer .important-links a {
     width: 180px;
 }
 
+footer .important-links a:hover {
+    color: var(--button-color);
+}
+
 .social-medias {
     display: flex;
     justify-content: center;
@@ -252,11 +324,15 @@ footer .important-links a {
     }
 
     .blogs-area {
-        grid-template-columns: auto;
+        grid-template-columns: 100%;
     }
 
     .blogs-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .match-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .options {
@@ -319,7 +395,8 @@ footer .important-links a {
         grid-template-columns: auto;
     }
 
-    .blogs-grid {
+    .blogs-grid,
+    .match-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -399,13 +476,15 @@ footer .important-links a {
     }
 
     .blogs-area {
-        grid-template-columns: auto;
-        width: 100%;
+        grid-template-columns: 100%;
     }
 
-    .blogs-grid {
-        grid-template-columns: auto;
+    .blogs-grid,
+    .match-grid {
+        grid-template-columns: 100%;
+        width: 100%;
         gap: 16px 0;
+        justify-content: center;
     }
 
     .options {
